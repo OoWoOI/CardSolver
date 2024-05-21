@@ -44,7 +44,7 @@ void output_solution(Node *root, int *a, int *b) {
     stack<Node *> s;
     s.push(root);
 
-    while (s.empty()) {
+    while (!s.empty()) {
         printf("%s : ", s.size() % 2 ? "-->" : "  ");
         PAI::output_arr(a);
         printf("%s : ", s.size() % 2 ? "  " : "-->");

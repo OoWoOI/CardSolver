@@ -27,7 +27,10 @@ void getTree(Node *root, int *a, int *b) {
         getTree(node, b, a);/*交换出牌顺序*/
         temp[i]->back(a);
         root->child.push_back(node);/*添加node到子孩子中去*/
-        if (node->__win == 0) root->__win = 1;/*将当前结点标记为必胜态*/
+        if (node->__win == 0) {
+            root->__win = 1;/*将当前结点标记为必胜态*/
+            break;/*结束循环，避免状态展开过多*/
+        }
     }
     
     return ;
